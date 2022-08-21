@@ -1,9 +1,11 @@
 package com.codelabs.southsystem.eventos.features.events.presentation.detail
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.codelabs.southsystem.eventos.R
 import com.codelabs.southsystem.eventos.core.UiState
 import com.codelabs.southsystem.eventos.core.helpers.GlideHelper
@@ -57,8 +59,27 @@ class EventDetailActivity : AppCompatActivity() {
             }
         }
 
+        viewModel.eventAddress.observe(this) { eventAddress ->
+            binding.tvAddress.apply {
+                text = eventAddress.formattedAddress
+                visibility = View.VISIBLE
+            }
+        }
+
+        binding.contentStateView.setOnRetryClickListener { viewModel.getEventDetail(eventId) }
+
         if (savedInstanceState == null) {
             viewModel.getEventDetail(eventId)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -72,11 +93,14 @@ class EventDetailActivity : AppCompatActivity() {
             binding.tvDescription.text = event.description
             binding.tvDate.text = event.date.format()
             binding.tvPrice.text = event.price.toBrazilianCurrency()
-            binding.btnCheckIn.setOnClickListener(::onCheckIn)
+            binding.btnCheckIn.setOnClickListener(::onCheckInClicked)
+            binding.btnShare.setOnClickListener { performShare(event) }
+
+            viewModel.getEventAddress(event.latitude, event.longitude)
         }
     }
 
-    private fun onCheckIn(view: View) {
+    private fun onCheckInClicked(view: View) {
         bottomSheetDialog = CheckInBottomSheetDialog(this) { name, email ->
             viewModel.performCheckIn(eventId, name, email)
         }.also { it.show() }
@@ -87,6 +111,22 @@ class EventDetailActivity : AppCompatActivity() {
         binding.btnCheckIn.isEnabled = false
         Snackbar.make(binding.root,
             getString(R.string.checked_in_successfully), Snackbar.LENGTH_LONG).show()
+    }
+
+    private fun performShare(event: Event) {
+        val sendIntent = Intent().apply {
+            val presenter = EventSharePresenter(event, viewModel.eventAddress.value)
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_SUBJECT, presenter.subject)
+            putExtra(Intent.EXTRA_TEXT, presenter.text)
+            type = "text/plain"
+        }
+
+        if (sendIntent.resolveActivity(packageManager) != null) {
+            startActivity(Intent.createChooser(sendIntent, null))
+        } else {
+            Snackbar.make(binding.root, getString(R.string.no_app_found), Snackbar.LENGTH_LONG).show()
+        }
     }
 
 }

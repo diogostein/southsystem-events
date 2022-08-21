@@ -19,7 +19,7 @@ class EventRepositoryImpl(
                 Result.success(response.map { it.toEntity() })
             }
         } catch (e: Exception) {
-            Result.failure(ServerException(e.message))
+            Result.failure(ServerException())
         }
     }
 
@@ -29,7 +29,7 @@ class EventRepositoryImpl(
                 Result.success(response.toEntity())
             }
         } catch (e: Exception) {
-            Result.failure(ServerException(e.message))
+            Result.failure(ServerException())
         }
     }
 
@@ -39,7 +39,7 @@ class EventRepositoryImpl(
                 Result.success(response)
             }
         } catch (e: Exception) {
-            Result.failure(ServerException(e.message))
+            Result.failure(ServerException())
         }
     }
 

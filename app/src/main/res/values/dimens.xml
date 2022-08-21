@@ -7,6 +7,6 @@
     <dimen name="textSizeMedium">16sp</dimen>
     <dimen name="textSizeLarge">20sp</dimen>
     <dimen name="textSizeLargeX">24sp</dimen>
-    <dimen name="cardElevation">12dp</dimen>
+    <dimen name="cardElevation">2dp</dimen>
     <dimen name="cardCornerRadius">12dp</dimen>
 </resources>

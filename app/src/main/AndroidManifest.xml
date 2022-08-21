@@ -5,6 +5,14 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+        </intent>
+    </queries>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -15,11 +23,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TesteSouthSystem"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31" >
         <activity
             android:name=".features.events.presentation.detail.EventDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".features.events.presentation.list.EventListActivity"
             android:exported="false" />
         <activity
             android:name=".features.events.presentation.list.EventListActivity"

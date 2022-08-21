@@ -126,6 +126,22 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing"
+                android:layout_marginTop="@dimen/spacing"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="@dimen/textSizeMedium"
+                android:visibility="gone" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

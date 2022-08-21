@@ -24,7 +24,7 @@ class EventListViewModel @Inject constructor(
         getEvents()
     }
 
-    private fun getEvents() {
+    fun getEvents() {
         _state.value = UiState.Loading
 
         viewModelScope.launch {

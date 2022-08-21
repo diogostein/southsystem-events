@@ -15,4 +15,5 @@
     <string name="sending">Enviando...</string>
     <string name="invalid">Inválido</string>
     <string name="checked_in_successfully">Check-in realizado com sucesso!</string>
+    <string name="no_app_found">Nenhum app encontrado</string>
 </resources>

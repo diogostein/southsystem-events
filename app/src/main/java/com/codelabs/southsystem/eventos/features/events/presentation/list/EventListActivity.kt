@@ -3,6 +3,7 @@ package com.codelabs.southsystem.eventos.features.events.presentation.list
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.codelabs.southsystem.eventos.R
@@ -36,6 +37,8 @@ class EventListActivity : AppCompatActivity() {
                 else -> {}
             }
         }
+
+        binding.listStateView.setOnRetryClickListener { viewModel.getEvents() }
     }
 
     private fun onItemClick(event: Event) {

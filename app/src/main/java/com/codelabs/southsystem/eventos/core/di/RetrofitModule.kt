@@ -37,7 +37,7 @@ object RetrofitModule {
     fun provideWebService(okHttpClient: OkHttpClient): WebService {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("http://5f5a8f24d44d640016169133.mockapi.io/")
+            .baseUrl("https://5f5a8f24d44d640016169133.mockapi.io/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WebService::class.java)
