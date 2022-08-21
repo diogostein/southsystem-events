@@ -5,6 +5,7 @@ import com.codelabs.southsystem.eventos.features.events.data.EventRepositoryImpl
 import com.codelabs.southsystem.eventos.features.events.domain.repositories.EventRepository
 import com.codelabs.southsystem.eventos.features.events.domain.usecases.GetEventDetailUseCase
 import com.codelabs.southsystem.eventos.features.events.domain.usecases.GetEventsUseCase
+import com.codelabs.southsystem.eventos.features.events.domain.usecases.PerformCheckInUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,6 +32,12 @@ object EventModule {
     @ViewModelScoped
     fun provideGetEventDetailUseCase(repository: EventRepository): GetEventDetailUseCase {
         return GetEventDetailUseCase(repository)
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun providePerformCheckInUseCase(repository: EventRepository): PerformCheckInUseCase {
+        return PerformCheckInUseCase(repository)
     }
 
 }

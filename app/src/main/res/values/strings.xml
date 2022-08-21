@@ -7,4 +7,12 @@
     <string name="event">Evento</string>
     <string name="check_in">Check-In</string>
     <string name="share">Compartilhar</string>
+    <string name="check_in_data">Dados de Check-in</string>
+    <string name="name">Nome</string>
+    <string name="email">Email</string>
+    <string name="confirm_check_in">Confirmar Check-In</string>
+    <string name="cannot_be_blank">não pode ficar em branco</string>
+    <string name="sending">Enviando...</string>
+    <string name="invalid">Inválido</string>
+    <string name="checked_in_successfully">Check-in realizado com sucesso!</string>
 </resources>

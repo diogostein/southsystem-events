@@ -35,7 +35,8 @@ class ContentStateView constructor(
         binding.includeError.btnReload.setOnClickListener { onRetryClickListener() }
     }
 
-    fun showContent() {
+    fun showContent(content: () -> Unit) {
+        content()
         binding.viewGroupContent.visibility = VISIBLE
         binding.includeProgress.progressBar.visibility = GONE
         setErrorVisibility(GONE)
