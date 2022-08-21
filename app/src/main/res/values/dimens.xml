@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing">16dp</dimen>
+    <dimen name="spacingHalf">8dp</dimen>
+    <dimen name="spacingDouble">32sp</dimen>
+    <dimen name="textSizeSmall">12sp</dimen>
+    <dimen name="textSizeMedium">16sp</dimen>
+    <dimen name="textSizeLarge">20sp</dimen>
+    <dimen name="textSizeLargeX">24sp</dimen>
+    <dimen name="cardElevation">12dp</dimen>
+    <dimen name="cardCornerRadius">12dp</dimen>
+</resources>

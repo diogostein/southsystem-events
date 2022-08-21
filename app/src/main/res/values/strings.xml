@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Eventos</string>
+    <string name="events">Eventos</string>
+    <string name="reload">Recarregar</string>
+    <string name="event_date">Data do evento</string>
+    <string name="entrance">Entrada</string>
+    <string name="event">Evento</string>
+    <string name="check_in">Check-In</string>
+    <string name="share">Compartilhar</string>
+</resources>

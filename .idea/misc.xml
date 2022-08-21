@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/edge_fade_bottom.xml" value="0.2815" />
+        <entry key="app/src/main/res/drawable/edge_fade_top.xml" value="0.227" />
+        <entry key="app/src/main/res/drawable/gradient_overlay.xml" value="0.273" />
+        <entry key="app/src/main/res/font-v26/poppins.xml" value="0.3892307692307692" />
+        <entry key="app/src/main/res/font/poppins.xml" value="0.3882051282051282" />
+        <entry key="app/src/main/res/layout/activity_event_detail.xml" value="0.31068840579710144" />
+        <entry key="app/src/main/res/layout/activity_event_list.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3515625" />
+        <entry key="app/src/main/res/layout/content_event_detail.xml" value="0.31068840579710144" />
+        <entry key="app/src/main/res/layout/item_event.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/widget_content_state_view.xml" value="0.31068840579710144" />
+        <entry key="app/src/main/res/layout/widget_error.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/widget_list_state_view.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/widget_progress.xml" value="0.31068840579710144" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
