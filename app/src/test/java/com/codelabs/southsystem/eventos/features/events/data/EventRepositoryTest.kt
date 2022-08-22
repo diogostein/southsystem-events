@@ -56,7 +56,7 @@ class EventRepositoryTest {
     }
 
     @Test
-    fun `it should return an code response on successful check-in`() = runTest {
+    fun `it should return a code response on successful check-in`() = runTest {
         whenever(webService.checkIn(fakeCheckInRequest)).thenReturn(fakeCodeResponse)
 
         val result = repository.performCheckIn(fakeCheckInRequest)

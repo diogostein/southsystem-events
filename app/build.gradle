@@ -51,18 +51,6 @@ dependencies {
     testImplementation "org.mockito:mockito-inline:$mockito_version"
     testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_version"
 
-    // For InstantTaskExecutorRule
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
-
-    // For Flow Testing
-    testImplementation 'app.cash.turbine:turbine:0.7.0'
-
-    // Android Test
-    //androidTestImplementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
-//    androidTestImplementation('com.adevinta.android:barista:4.2.0') {
-//        exclude group: 'org.jetbrains.kotlin' // Only if you already use Kotlin in your project
-//    }
-
     // ViewModel for fragment
     implementation 'androidx.fragment:fragment-ktx:1.5.2'
 
