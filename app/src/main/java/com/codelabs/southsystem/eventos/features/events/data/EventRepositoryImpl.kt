@@ -7,6 +7,7 @@ import com.codelabs.southsystem.eventos.core.network.response.CodeResponse
 import com.codelabs.southsystem.eventos.core.network.response.toEntity
 import com.codelabs.southsystem.eventos.features.events.domain.entities.Event
 import com.codelabs.southsystem.eventos.features.events.domain.repositories.EventRepository
+import retrofit2.HttpException
 import java.lang.Exception
 
 class EventRepositoryImpl(
@@ -18,7 +19,7 @@ class EventRepositoryImpl(
             webService.getEvents().let { response ->
                 Result.success(response.map { it.toEntity() })
             }
-        } catch (e: Exception) {
+        } catch (e: HttpException) {
             Result.failure(ServerException())
         }
     }
@@ -28,7 +29,7 @@ class EventRepositoryImpl(
             webService.getEvent(id).let { response ->
                 Result.success(response.toEntity())
             }
-        } catch (e: Exception) {
+        } catch (e: HttpException) {
             Result.failure(ServerException())
         }
     }
@@ -38,7 +39,7 @@ class EventRepositoryImpl(
             webService.checkIn(request).let { response ->
                 Result.success(response)
             }
-        } catch (e: Exception) {
+        } catch (e: HttpException) {
             Result.failure(ServerException())
         }
     }
